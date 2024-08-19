@@ -21,14 +21,13 @@
 }
 
 .greetings-container {
-  max-width: 350px;
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
 .greeting-card {
-  max-width: 350px;
+  display: flex;
   background-color: rgba(255, 255, 255, 0.42);
   opacity: 0;
   transform: translateY(50px);
@@ -47,6 +46,7 @@
 
 .greeting-name {
   font-size: 1.5rem;
+  display: flex;
   margin: 0;
 }
 
@@ -69,6 +69,7 @@
 
 @media (min-width: 768px) {
   .greeting-card {
+    max-width: 350px;
     padding: 20px;
   }
 }
