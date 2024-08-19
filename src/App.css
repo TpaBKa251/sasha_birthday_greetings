@@ -6,8 +6,9 @@
   background: linear-gradient(135deg, #ff7b00, #ff0000, #ffec00, #ff6200, #c800ff, #00aaff);
   background-size: 400% 400%;
   animation: backgroundAnimation 15s infinite;
-  padding: 20px; /* Добавляем отступы по краям */
-  word-break: break-word;
+  padding: 20px; /* Отступы по краям */
+  width: 100%; /* Занимаем всю ширину экрана */
+  box-sizing: border-box; /* Учитываем padding при расчете ширины */
 }
 
 @keyframes backgroundAnimation {
@@ -25,15 +26,13 @@
 .greetings-container {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Уменьшаем промежутки между карточками для мобильных */
-  width: 100%; /* Карточки будут занимать всю доступную ширину */
+  gap: 30px; /* Промежутки между карточками */
+  width: 100%; /* Занимаем всю доступную ширину */
   max-width: 350px; /* Ограничиваем максимальную ширину карточек */
+  margin: 0 auto; /* Центрируем контейнер с карточками */
 }
 
 .greeting-card {
-  display: flex;
-  flex-direction: column;
-  /max-width: 350px;
   background-color: rgba(255, 255, 255, 0.42);
   opacity: 0;
   transform: translateY(50px);
@@ -43,6 +42,7 @@
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%; /* Карточка занимает всю доступную ширину контейнера */
+  box-sizing: border-box; /* Учитываем padding при расчете ширины */
 }
 
 .greeting-card.visible {
@@ -53,15 +53,14 @@
 .greeting-name {
   font-size: 1.5rem;
   margin: 0;
-  text-align: center; /* Центрируем имя */
+  text-align: center;
   word-break: break-word;
-
 }
 
 .greeting-message {
   font-size: 1rem;
   margin: 10px 0;
-  text-align: center; /* Центрируем текст сообщения */
+  text-align: center;
   word-break: break-word;
 }
 
@@ -76,7 +75,7 @@
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  margin: 0 auto; /* Центрируем изображения и видео */
+  margin: 0 auto;
 }
 
 /* Медиазапросы для устройств с большим экраном */
