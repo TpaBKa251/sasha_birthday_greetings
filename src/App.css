@@ -21,16 +21,14 @@
 }
 
 .greetings-container {
+  max-width: 350px;
   display: flex;
-  width: 100vh;
-  height: auto;
   flex-direction: column;
   gap: 50px;
 }
 
 .greeting-card {
-  width: 100vh;
-  height: auto;
+  max-width: 350px;
   background-color: rgba(255, 255, 255, 0.42);
   opacity: 0;
   transform: translateY(50px);
@@ -64,7 +62,7 @@
 }
 
 .greeting-image, .greeting-video {
-  max-width: 100vh;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
@@ -73,4 +71,11 @@
   .greeting-card {
     padding: 20px;
   }
+}
+
+.app-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
