@@ -3,7 +3,7 @@ import './App.css'; // Импортируем стили
 
 function App() {
     const [greetings, setGreetings] = useState([]);
-    const baseUrl = 'http://localhost:8080/sasha/birthday/social/network'; // базовый URL для статических файлов
+    const baseUrl = 'https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network'; // базовый URL для статических файлов
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,7 +18,7 @@ function App() {
         };
 
         const fetchGreetings = async () => {
-            const response = await fetch('http://localhost:8080/sasha/birthday/social/network/get');
+            const response = await fetch('https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network/get');
             const data = await response.json();
             setGreetings(data);
         };
