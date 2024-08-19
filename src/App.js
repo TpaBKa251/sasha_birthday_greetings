@@ -6,16 +6,16 @@ function App() {
     const baseUrl = 'https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network'; // базовый URL для статических файлов
 
     useEffect(() => {
-        // const handleScroll = () => {
-        //     const sections = document.querySelectorAll('.greeting-card');
-        //
-        //     sections.forEach(section => {
-        //         const rect = section.getBoundingClientRect();
-        //         if (rect.top <= window.innerHeight * 0.9 && rect.bottom >= 0) {
-        //             section.classList.add('visible');
-        //         }
-        //     });
-        // };
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('.greeting-card');
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.9 && rect.bottom >= 0) {
+                    section.classList.add('visible');
+                }
+            });
+        };
 
         const fetchGreetings = async () => {
             const response = await fetch('https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network/get');
@@ -23,13 +23,13 @@ function App() {
             setGreetings(data);
         };
 
-        //window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
         fetchGreetings();
 
         // Убедитесь, что классы применяются при первой загрузке страницы
-        //handleScroll();
+        handleScroll();
 
-        //return () => window.removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -40,14 +40,14 @@ function App() {
                     <div className="greeting-card" key={greeting.id}>
                         <h2 className="greeting-name">{greeting.name}</h2>
                         <p className="greeting-message">{greeting.message}</p>
-                        <div className="media-container">
-                            {greeting.imageUrl && (
-                                <img src={`${baseUrl}${greeting.imageUrl}`} alt="Greeting Image" className="greeting-image" />
-                            )}
-                            {greeting.videoUrl && (
-                                <video src={`${baseUrl}${greeting.videoUrl}`} controls className="greeting-video" />
-                            )}
-                        </div>
+                        {/*<div className="media-container">*/}
+                        {/*    {greeting.imageUrl && (*/}
+                        {/*        <img src={`${baseUrl}${greeting.imageUrl}`} alt="Greeting Image" className="greeting-image" />*/}
+                        {/*    )}*/}
+                        {/*    {greeting.videoUrl && (*/}
+                        {/*        <video src={`${baseUrl}${greeting.videoUrl}`} controls className="greeting-video" />*/}
+                        {/*    )}*/}
+                        {/*</div>*/}
                     </div>
                 ))}
             </div>
