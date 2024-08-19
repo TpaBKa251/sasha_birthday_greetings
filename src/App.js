@@ -6,16 +6,16 @@ function App() {
     const baseUrl = 'https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network'; // базовый URL для статических файлов
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = document.querySelectorAll('.greeting-card');
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= window.innerHeight * 0.9 && rect.bottom >= 0) {
-                    section.classList.add('visible');
-                }
-            });
-        };
+        // const handleScroll = () => {
+        //     const sections = document.querySelectorAll('.greeting-card');
+        //
+        //     sections.forEach(section => {
+        //         const rect = section.getBoundingClientRect();
+        //         if (rect.top <= window.innerHeight * 0.9 && rect.bottom >= 0) {
+        //             section.classList.add('visible');
+        //         }
+        //     });
+        // };
 
         const fetchGreetings = async () => {
             const response = await fetch('https://sasha-birthday-social-network.onrender.com/sasha/birthday/social/network/get');
@@ -23,11 +23,11 @@ function App() {
             setGreetings(data);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        //window.addEventListener('scroll', handleScroll);
         fetchGreetings();
 
         // Убедитесь, что классы применяются при первой загрузке страницы
-        handleScroll();
+        //handleScroll();
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
