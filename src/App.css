@@ -20,13 +20,6 @@
   }
 }
 
-.app-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .greetings-container {
   display: flex;
   flex-direction: column;
@@ -35,17 +28,20 @@
 
 .greeting-card {
   background-color: rgba(255, 255, 255, 0.42);
-  /animation: fadeIn 1.5s ease-in-out;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   backdrop-filter: blur(10px);
-/border: 1px solid #ddd;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Класс для элементов, которые стали видимыми */
+.greeting-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .greeting-name {
   font-size: 1.5rem;
@@ -63,26 +59,12 @@
   gap: 25px;
 }
 
-.greeting-image {
+.greeting-image, .greeting-video {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.greeting-video {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.greeting-timestamp {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.875rem;
-  color: #666;
-}
-
-/* Медиазапросы для адаптивного дизайна */
 @media (min-width: 768px) {
   .greeting-card {
     padding: 20px;
