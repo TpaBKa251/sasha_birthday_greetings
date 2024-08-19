@@ -27,7 +27,6 @@
 }
 
 .greeting-card {
-  display: flex;
   background-color: rgba(255, 255, 255, 0.42);
   opacity: 0;
   transform: translateY(50px);
@@ -46,7 +45,6 @@
 
 .greeting-name {
   font-size: 1.5rem;
-  display: flex;
   margin: 0;
 }
 
@@ -67,7 +65,7 @@
   border-radius: 10px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .greeting-card {
     max-width: 350px;
     padding: 20px;
