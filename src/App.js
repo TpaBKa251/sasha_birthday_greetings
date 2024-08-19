@@ -29,7 +29,7 @@ function App() {
         // Убедитесь, что классы применяются при первой загрузке страницы
         //handleScroll();
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        //return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
